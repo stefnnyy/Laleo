@@ -1,0 +1,113 @@
+/* Desktop presentation only (html.is-framed is set at >= 768px). */
+html.is-framed body {
+  background: #1d1c21;
+}
+
+.stage-frame {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.device-slot {
+  position: relative;
+}
+
+/* Minimal device: a rounded slab, no hardware details. */
+.device {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  border-radius: 52px;
+  overflow: hidden;
+  background: #fff;
+  isolation: isolate;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 40px 90px -30px rgba(0, 0, 0, 0.75),
+    0 18px 40px -24px rgba(0, 0, 0, 0.6);
+}
+
+.device iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.device__status {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 30px 0 38px;
+  color: #000;
+  font: 600 15px/1 -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', sans-serif;
+  letter-spacing: -0.01em;
+  pointer-events: none;
+}
+
+.device__island {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  width: 116px;
+  height: 32px;
+  margin-left: -58px;
+  border-radius: 20px;
+  background: #000;
+}
+
+.device__icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.device__icons svg {
+  fill: currentColor;
+}
+
+.device__battery {
+  position: relative;
+  width: 25px;
+  height: 12px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.device__battery::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  right: 5px;
+  border-radius: 2px;
+  background: #000;
+}
+
+.device__battery::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 4px;
+  width: 1.5px;
+  height: 4px;
+  border-radius: 0 1px 1px 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.device__home {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Figma: indicator sits 8px above the bottom edge, centred. */
+.device__home {
+  bottom: 8px;
+  left: 50%;
+  margin-left: -67px;
+}
