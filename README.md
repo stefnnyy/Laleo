@@ -9,14 +9,6 @@ A daily Christian confession app. Read your confession aloud and the words follo
 - **Daily streak**: completing a confession records the day and shows your week's progress. Saved in the browser for now.
 - **Web showcase**: on desktop the app sits in a phone frame; on phones it runs full screen.
 
-## Run locally
-
-```bash
-npm install
-npm run dev
-```
-
-Open http://localhost:5173. Voice follow-along works best in Chrome; allow microphone access when asked.
 
 ## Stack
 
