@@ -125,10 +125,6 @@ img {
   transition: opacity 0.15s;
 }
 
-.icon-btn:hover {
-  opacity: 0.65;
-}
-
 .icon-btn::before {
   /* 44px touch target without changing the 24px layout box */
   content: '';
@@ -292,10 +288,6 @@ img {
     opacity 0.2s;
 }
 
-.mic-btn:hover {
-  filter: brightness(0.95);
-}
-
 .mic-btn:active {
   transform: scale(0.95);
 }
@@ -431,10 +423,6 @@ img {
   transition: filter 0.15s;
 }
 
-.btn-secondary:hover {
-  filter: brightness(0.96);
-}
-
 .btn-secondary:active {
   filter: brightness(0.92);
 }
@@ -496,6 +484,20 @@ img {
 
 
 /* ------------------------------------------------------------- responsive */
+
+/* Hover effects only where a real pointer can hover (not on touch screens,
+   where taps would otherwise leave buttons stuck in their hover look). */
+@media (hover: hover) and (pointer: fine) {
+  .icon-btn:hover {
+    opacity: 0.65;
+  }
+  .mic-btn:hover {
+    filter: brightness(0.95);
+  }
+  .btn-secondary:hover {
+    filter: brightness(0.96);
+  }
+}
 
 @media (max-height: 600px) {
   .confession__stage {
